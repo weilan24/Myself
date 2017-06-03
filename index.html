@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>简历</title>
+
+    <!-- 载入所有的组件资源 -->
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.fullPage.js"></script>
+
+    <!-- H5对象：进行内容管理 -->
+    <script type="text/javascript" src="js/H5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/H5.css" >
+
+    <!-- 页面逻辑的样式 -->
+    <style type="text/css">
+    body{
+        margin: 0;padding: 0;
+    }
+    .h5_page{
+        background-image: url(imgs/page_bg.png);
+    }
+    .h5_page_face{
+        background-image: url(imgs/face_bg.png);
+    }
+    .h5_component_name_slogan{
+        animation:rock 2s infinite 2s;
+    }
+    @keyframes rock{
+        0%{transform:rotate(0deg);}
+        5%{transform:rotate(3deg);}
+        10%{transform:rotate(-4deg);}
+        15%{transform:rotate(3deg);}
+        20%{transform:rotate(-2deg);}
+        25%{transform:rotate(1deg);}
+        30%{transform:rotate(-1deg);}
+        70%{transform:rotate(0deg);}
+    }
+    .h5_component_name_caption{
+    background-image:url(imgs/page_caption_bg.png);
+    width: 283px;
+    height: 140px;
+    text-align: center;
+    line-height: 140px;
+    font-size: 20px;
+    color: #fff;
+    }
+    .h5_component_name_back{
+        animation:back 2s infinite 2s;
+    }
+    @keyframes back{
+        50%{top:30px;}
+    }
+
+    }
+
+    </style>
+
+    
+<body>
+
+    <!-- 加载 H5组件 相关资源 -->
+    <script type="text/javascript">
+
+        var res = [
+            'Base','Bar','Point','Polyline',
+            ];
+        var html = [];
+        for(s in res){
+            html.push('<script type="text/javascript" src="js/H5Component'+res[s]+'.js"><\/script>');
+            html.push('<link rel="stylesheet" type="text/css" href="css/H5Component'+res[s]+'.css">');
+
+        }
+        document.write( html.join('') );
+    </script>
+    
+    <!-- 主要逻辑 -->
+    <script type="text/javascript">
+    $(function(){
+        var h5=new H5();
+
+        h5.whenAddPage=function(){
+            this.addComponent('slide_up',{
+                bg:'imgs/footer1.png',
+                css:{
+                    left:0,
+                    bottom:-32,
+                    width:'100%',
+                    height:'32px',
+                    zIndex:999,
+                },
+                animateIn:{opacity:1,bottom:0},
+                delay:500
+            })
+        }
+
+        h5.addPage('face')//链式添加页和组件！！！！
+            .addComponent('description',{
+                center:true,
+                width:600,
+                height:140,
+                css:{
+                    opacity:0,
+                    padding:'15px 10px 10px 10px',
+                    color:'#fff',
+                    fontSize:'32px',
+                    lineHeight:'28px',
+                    textAlign:'center',
+                    fontWeight:'bold',
+                    fontFamily:'KaiTi_GB2312',//楷体
+                    top:240
+                },
+                    text:'简历 - web前端开发',
+                    animateIn:{opacity:1,top:110},
+                    animateOut:{opacity:0,top:240},
+                    delay:1000,
+            })
+            .addComponent('description',{
+                center:true,
+                width:700,
+                height:50,
+                css:{
+                    opacity:0,
+                    padding:'15px 10px 10px 10px',
+                    color:'#fff',
+                    fontSize:'20px',
+                    lineHeight:'28px',
+                    textAlign:'center',
+                    top:240
+                },
+                    text:'姓名：严蔚岚',
+                    animateIn:{opacity:1,top:220},
+                    animateOut:{opacity:0,top:240},
+                    delay:1000,
+            })
+            .addComponent('description',{
+                center:true,
+                width:700,
+                height:100,
+                css:{
+                    opacity:0,
+                    padding:'15px 10px 10px 10px',
+                    color:'#fff',
+                    fontSize:'20px',
+                    lineHeight:'28px',
+                    textAlign:'center',
+                    top:240
+                },
+                    text:'籍贯：江苏无锡   学历：硕士 ',
+                    animateIn:{opacity:1,top:250},
+                    animateOut:{opacity:0,top:240},
+                    delay:1000,
+            })
+            .addComponent('description',{
+                center:true,
+                width:700,
+                height:100,
+                css:{
+                    opacity:0,
+                    padding:'15px 10px 10px 10px',
+                    color:'#fff',
+                    fontSize:'20px',
+                    lineHeight:'28px',
+                    textAlign:'center',
+                    top:240
+                },
+                    text:'政治面貌：中共党员 ',
+                    animateIn:{opacity:1,top:280},
+                    animateOut:{opacity:0,top:240},
+                    delay:1000,
+            })
+            .addComponent('description',{
+                center:true,
+                width:700,
+                height:100,
+                css:{
+                    opacity:0,
+                    padding:'15px 10px 10px 10px',
+                    color:'#fff',
+                    fontSize:'20px',
+                    lineHeight:'28px',
+                    textAlign:'center',
+                    top:240
+                },
+                    text:'联系方式：15951662602 ',
+                    animateIn:{opacity:1,top:310},
+                    animateOut:{opacity:0,top:240},
+                    delay:1000,
+            })
+            .addComponent('description',{
+                center:true,
+                width:700,
+                height:100,
+                css:{
+                    opacity:0,
+                    padding:'15px 10px 10px 10px',
+                    color:'#fff',
+                    fontSize:'20px',
+                    lineHeight:'28px',
+                    textAlign:'center',
+                    top:240
+                },
+                    text:'电子邮箱：463042104@qq.com ',
+                    animateIn:{opacity:1,top:340},
+                    animateOut:{opacity:0,top:240},
+                    delay:1000,
+            })
+            .addComponent('face_img_left',{
+                width:470,
+                height:590,
+                bg:'imgs/face_img_left.png',
+                css:{opacity:0,left:-50,bottom:-50},
+                animateIn:{opacity:1,left:0,bottom:0},
+                animateOut:{opacity:0,left:-50,bottom:-50},
+
+            })
+            .addComponent('face_img_right',{
+                width:376,
+                height:540,
+                bg:'imgs/face_img_right.png',
+                css:{opacity:0,right:-50,bottom:-50},
+                animateIn:{opacity:1,right:0,bottom:0},
+                animateOut:{opacity:0,right:-50,bottom:-50},    
+            })
+          .addPage()
+            .addComponent('caption',{
+                text:'教育情况'
+            })
+            .addComponent('text',{
+                width:560,
+                height:30,
+                text:'2011-2015 本科学习',
+                css:{opacity:0,color:'red',textAlign:'center',fontSize:'26px'},
+                animateIn:{opacity:1,top:140},
+                animateOut:{opacity:0}
+            })
+            .addComponent('description',{
+                width:1200,
+                height:295,
+                css:{
+                    opacity:0,
+                    padding:'15px 0px 15px 45px',
+                    color:'#000',
+                    fontSize:'18px',
+                    lineHeight:'18px',
+                    textAlign:'justify',
+
+                
+                },
+                    text:'就读于苏科科技大学，二本院校，电子与信息学院，电子与信息工程专业',
+                    animateIn:{opacity:1,top:170},
+                    animateOut:{opacity:0}
+            })
+            .addComponent('text',{
+                width:580,
+                height:30,
+                text:'2015-2018 研究生学习',
+                css:{opacity:0,color:'red',textAlign:'center',fontSize:'26px'},
+                animateIn:{opacity:1,top:250},
+                animateOut:{opacity:0},
+            })
+            .addComponent('description',{
+                // width:1200,
+                height:295,
+                css:{
+                    opacity:0,
+                    padding:'15px 0px 15px 45px',
+                    color:'#000',
+                    fontSize:'18px',
+                    lineHeight:'18px',
+                    textAlign:'justify',
+                    width:'70%',
+                },
+                    text:'就读于南京信息工程大学，电子与信息学院，信息与通常工程专业，主要研究方向为数据挖掘算法研究',
+                    animateIn:{opacity:1,top:280},
+                    animateOut:{opacity:0},
+            })
+            .addComponent('text',{
+                width:560,
+                height:30,
+                text:'学习课程：',
+                css:{opacity:0,color:'black',textAlign:'center',fontSize:'26px'},
+                animateIn:{opacity:1,top:380},
+                animateOut:{opacity:0}
+            })
+            .addComponent('description',{
+                width:1200,
+                height:295,
+                css:{
+                    opacity:0,
+                    padding:'15px 0px 15px 45px',
+                    color:'#000',
+                    fontSize:'18px',
+                    lineHeight:'18px',
+                    textAlign:'justify',
+                },
+                    text:'HTML5/CSS3/JavaScript讲义、基本框架学习（Bootstrap、Vue.js等）、jQuery实战、Java语言程序设计，Java从入门到精通，计算机基础，通信原理，单片机原理，移动通信技术，数据库原理，数据结构，数据挖掘概念与技术，机器学习，神经网络教程',
+                    animateIn:{opacity:1,top:410},
+                    animateOut:{opacity:0}
+            })
+            .addComponent('face_img_left',{
+                width:360,
+                height:360,
+                bg:'imgs/logo1.jpg',
+                css:{opacity:0,left:-50,bottom:-50},
+                animateIn:{opacity:1,left:100,bottom:30},
+                animateOut:{opacity:0},
+                delay:1000
+            })
+            .addComponent('face_img_right',{
+                width:360,
+                height:360,
+                bg:'imgs/logo2.jpg',
+                css:{opacity:0,right:-50,bottom:-50},
+                animateIn:{opacity:1,right:100,bottom:46},
+                animateOut:{opacity:0,right:-50,bottom:-50},
+                delay:1000    
+            })
+          .addPage()
+            .addComponent('caption',{
+                text:'证书和奖励'
+            })
+            .addComponent('text',{
+                center:true,
+                width:580,
+                height:30,
+                text:'英语四级',
+                css:{opacity:0,color:'#000',textAlign:'center',fontSize:'26px',fontWeight:'bold'},
+                animateIn:{opacity:1,top:150},
+                animateOut:{opacity:0},
+            })
+            .addComponent('text',{
+                center:true,
+                width:580,
+                height:30,
+                text:'英语六级',
+                css:{opacity:0,color:'#000',textAlign:'center',fontSize:'26px',fontWeight:'bold'},
+                animateIn:{opacity:1,top:200},
+                animateOut:{opacity:0},
+                delay:400
+            })
+            .addComponent('text',{
+                center:true,
+                width:580,
+                height:30,
+                text:'全国计算机c语言二级',
+                css:{opacity:0,color:'#000',textAlign:'center',fontSize:'26px',fontWeight:'bold'},
+                animateIn:{opacity:1,top:250},
+                animateOut:{opacity:0},
+                delay:800
+            })
+            .addComponent('text',{
+                center:true,
+                width:580,
+                height:30,
+                text:'校二等奖学金',
+                css:{opacity:0,color:'#000',textAlign:'center',fontSize:'26px',fontWeight:'bold'},
+                animateIn:{opacity:1,top:300},
+                animateOut:{opacity:0},
+                delay:1200
+            })
+            .addComponent('text',{
+                center:true,
+                width:580,
+                height:30,
+                text:'校三等奖学金',
+                css:{opacity:0,color:'#000',textAlign:'center',fontSize:'26px',fontWeight:'bold'},
+                animateIn:{opacity:1,top:350},
+                animateOut:{opacity:0},
+                delay:1600
+            })
+            
+            
+            .addComponent('people',{
+                center:true,
+                width:515,
+                height:305,
+                bg:'imgs/p1_people.png',
+                css:{
+                    opacity:0,
+                    bottom:0
+                },
+                animateIn:{opacity:1,bottom:100},
+                animateOut:{opacity:0,bottom:0},
+                delay:2000
+            })
+            .addPage()
+            .addComponent('caption',{
+                text:'课程学习分布'
+            })
+            .addComponent('msg',{
+                text:'课程学习分布情况',
+                css:{
+                    opacity:0,
+                    top:140,
+                    textAlign:'center',
+                    width:'100%',
+                    color:'#ff7676',
+                    fontSize:'28px',
+                    fontWeight:'bold',
+                },
+                animateIn:{opacity:1},
+                animateOut:{opacity:0}
+            })
+            .addComponent('point',{
+                type:'point',
+                width:300,
+                height:300,
+                data:[
+                ['前端知识', .7,'#ff7676'],
+                ['数据挖掘算法', .5,'rgba(204,129,201,1)',0,'-80%'],//x和y的偏移
+                ['后端知识', .4,'rgb(66, 134, 218)','-50%','80%']
+                ],
+                css:{bottom:0,opacity:0,},
+                center:true,
+                animateIn:{bottom:'30%',opacity:1},
+                animateOut:{bottom:0,opacity:0},
+            })
+            .addPage()
+            .addComponent('caption',{
+                text:'前端知识熟练度'
+            })
+            .addComponent('polyline',{
+                type:'polyline',
+                width:600,
+                height:400,
+                data:[
+                ['CSS', .7,'#ff7676'],
+                ['HTML', .7],
+                ['jS', .6],
+                ['jQuery', .6],
+                ],
+                css:{
+                    top:100,
+                    opacity:0
+                },
+                center:true,
+                animateIn:{top:200,opacity:1},//载入样式
+                animateOut:{top:100,opacity:0},//离开样式
+                
+            })
+            .addComponent('msg',{
+                text:'前端课程学习情况',
+                css:{
+                    opacity:0,
+                    top:140,
+                    textAlign:'center',
+                    width:'100%',
+                    color:'#ff7676',
+                    fontSize:'28px',
+                    fontWeight:'bold',
+                },
+                animateIn:{opacity:1},
+                animateOut:{opacity:0}
+            })
+          .addPage()
+            .addComponent('caption',{
+                text:'其他知识熟练度'
+            })
+            .addComponent('bar',{
+                type:'bar',
+                width:500,
+                height:300,
+                data:[
+                ['java', .6,'#ff7676'],
+                ['Matlab', .6],
+                ['php', .2],
+                ['Mysql', .3],
+                ],
+                css:{
+                    top:100,
+                    opacity:0
+                },
+                center:true,
+                animateIn:{top:250,opacity:1},//载入样式
+                animateOut:{top:100,opacity:0},//离开样式
+            })
+            .addComponent('msg',{
+                text:'其他课程学习情况',
+                css:{
+                    opacity:0,
+                    top:140,
+                    textAlign:'center',
+                    width:'100%',
+                    color:'#ff7676',
+                    fontSize:'28px',
+                    fontWeight:'bold',
+                },
+                animateIn:{opacity:1},
+                animateOut:{opacity:0}
+            })
+          
+          .addPage()
+            .addComponent('caption',{
+                text:'项目与实践'
+            })
+            .addComponent('text',{
+                width:560,
+                height:30,
+                text:'电商网站搭建',
+                css:{opacity:0,color:'red',textAlign:'center',fontSize:'26px'},
+                animateIn:{opacity:1,top:120},
+                animateOut:{opacity:0}
+            })
+            .addComponent('description',{
+                width:1200,
+                height:295,
+                css:{
+                    opacity:0,
+                    padding:'15px 0px 15px 45px',
+                    color:'#000',
+                    fontSize:'18px',
+                    lineHeight:'18px',
+                    textAlign:'justify',
+                
+                },
+                    text:'利用html、css、Javascript基本语法进行电商网站的搭建，实现了登录，产品分类，筛选页，商品评价页，产品介绍，购物车和结算页面的搭建。通过该项目，对HTML+CSS相关标签有所掌握，对网页布局知识有简单的了解，熟悉了css盒子模型，内外边距，设置浮动以及各清除浮动等对样式的修改等，掌握一定的JS基础知识。',
+                    animateIn:{opacity:1,top:150},
+                    animateOut:{opacity:0}
+            })
+            .addComponent('text',{
+                width:580,
+                height:30,
+                text:'web app开发 ',
+                css:{opacity:0,color:'red',textAlign:'center',fontSize:'26px'},
+                animateIn:{opacity:1,top:280},
+                animateOut:{opacity:0},
+            })
+            .addComponent('description',{
+                width:1200,
+                height:295,
+                css:{
+                    opacity:0,
+                    padding:'15px 0px 15px 45px',
+                    color:'#000',
+                    fontSize:'18px',
+                    lineHeight:'18px',
+                    textAlign:'justify',
+                    
+                },
+                    text:'利用html5、css3、Javascript、jQuery等基本语法进行web app的开发，利用jQuery中的fullPage.js插件，实现页面切换功能，实现页面内组件的“入场、出场”动画。对开发移动端的web页面设置有了初步了解，对H5、Canvas等有了一定的了解。',
+                    animateIn:{opacity:1,top:310},
+                    animateOut:{opacity:0},
+            })
+            .addComponent('text',{
+                width:680,
+                height:30,
+                text:'多维象数据融合及验证研究',
+                css:{opacity:0,color:'red',textAlign:'center',fontSize:'26px',paddingLeft:'30px'},
+                animateIn:{opacity:1,top:420},
+                animateOut:{opacity:0}
+            })
+            .addComponent('description',{
+                width:1200,
+                height:295,
+                css:{
+                    opacity:0,
+                    padding:'15px 0px 15px 45px',
+                    color:'#000',
+                    fontSize:'18px',
+                    lineHeight:'18px',
+                    textAlign:'justify',
+                },
+                    text:'负责基于参与感知的多源气象数据融合及验证分析方法研究项目中数据分类预测模块的研究，主要学习决策树分类算法和组合算法，进行降雨数据的分类处理。利用改进的C4.5决策树算法和组合算法相结合构建降雨分类模型，对来自中国广东地区自动气象站的降雨数据进行预测。就该项目发表一篇北大中文核心论文（已录用）。',
+                    animateIn:{opacity:1,top:450},
+                    animateOut:{opacity:0}
+            })
+
+          .addPage('tail')
+            .addComponent('slogan',{
+                center:true,
+                width:450,
+                height:46,
+               text:' 谢谢观看',
+                css:{
+                    opacity:0,
+                    top:280,fontWeight:'bold',fontSize:'50px',
+                    fontFamily:'KaiTi_GB2312 ',color:'red',
+                },
+                animateIn:{opacity:1,left:'50%'},
+                animateOut:{opacity:0,left:'0%'},
+                delay:500
+            })
+            .addComponent('share',{
+                width:128,
+                height:120,
+                bg:'imgs/tail_share.png',
+                css:{
+                    opacity:0,
+                    top:240,
+                },
+                animateIn:{opacity:1,top:20,right:20},
+                animateOut:{opacity:0},
+                delay:1000
+            })
+            .addComponent('back',{
+                width:52,
+                height:50,
+                bg:'imgs/tail_back.png',
+                center:true,
+                css:{top:20},
+                onclick:function(){
+                    $.fn.fullpage.moveTo(1)
+                }
+            })
+          .loader();// 切换到指定页面，H5.js
+
+    });
+    </script>
+
+    </body>
+
+</html>
